@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;1,200&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+h2{
+    text-align: center;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+p{ 
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+/*/////////////HEADER//////////////*/
+
+header{
+    background-image: url("./img/header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+.navBar{
+    display: flex;
+}
+
+span{
+    font-weight: 100;
+}
+.navBar-links{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.navBar-links ul{
+    display: flex;
+    list-style: none;
+    line-height: 50px;
+    z-index: 1000;  
+    position: fixed; 
+}
+
+.navBar-links ul li{
+    margin-right: 10px;
+    z-index: 1000;
+}
+.navBar-links ul a{
+    text-decoration: none;
+    color: white;
+    z-index: 1000;
+}
+.navBar .brand{
+    padding-left: 20px;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    z-index: 10;
+}
+.description{
+    position: absolute;
+    bottom: 3rem;
+    left: 10px;
+    font-size: 1.5rem;
+}
+.toggle{
+    position: fixed;
+    visibility: hidden;
+    top: 30px;
+    right: 10px;
+}
+
+/*/////////////MAIN CARDS//////////////*/
+
+.cards{
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card{
+    width: 280px;
+    margin: auto;
+    text-align: center;
+}
+
+/*/////////////ITEMS//////////////*/
+
+.items{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.item{
+    width: 300px;
+    height: 460px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: rgb(245, 245, 245);
+    transition: 0.8s ease-in-out;
+}
+.item:hover{
+    transform: translateY(-3px);
+    box-shadow: -11px 12px 52px -16px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -11px 12px 52px -16px rgba(0,0,0,0.75);
+    -moz-box-shadow: -11px 12px 52px -16px rgba(0,0,0,0.75);}
+.item h3{
+    text-align: center;
+}
+.items img{
+    width: 300px;
+}
+
+.itemIcon img{
+    width: 20px;
+}
+.itemIcon{
+    display: flex;
+    justify-content: space-evenly;
+}
+.link{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color:goldenrod;
+    height: 42px;
+    margin-top: -10px;
+}
+.link:hover{
+    background-color: rgb(196, 177, 74);
+}
+.link a{
+    text-decoration: none;  
+    color: white;
+    line-height: 40px;
+}
+
+/*/////////////BACKGROUND//////////////*/
+.background{
+    background-image: url("./img/Footer.jpg");
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content{
+    position: relative;
+    top: 150px;
+    padding-left: 10px;
+    width: 300px;
+    color: white;
+
+}
+.content h2{
+    text-align: start;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+.content h3{
+    background-color: goldenrod;
+    width: 140px;
+    padding: 2px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.content h3:hover{
+    background-color: rgb(196, 177, 74);
+}
+.content h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+/*/////////////FOOTER//////////////*/
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+
+}
+.rights h3{
+    color: white;
+    margin-right: 20px;
+}
+/*/////////////SOCIAL//////////////*/
+.social{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+.social img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    filter: invert(100%);
+    transition: 0.5s ease-in-out;
+}
+.social img:hover{
+    transform: scale(1.1);
+}
+/*/////////////NAVBAR RESPONSIVE//////////////*/
+#click{
+    display: none;
+}
+@media screen and (max-width: 620px) {
+    .navBar{
+        display: block;
+        position: absolute;
+    }
+    
+    .navBar-links ul{
+        display: block;
+        position: fixed;
+        left: -150px;
+        right: 0;
+        text-align: center;
+        width: 0;
+        z-index: 100;
+    }
+    .navBar-links ul li{
+        margin-top: 50px;
+    }
+    .toggle{
+        visibility: visible;
+        cursor: pointer;
+        z-index: 1000;
+        position: fixed;
+        color: goldenrod;
+    }
+    #click{
+        display: none;
+    }
+    #click:checked ~ .navBar-links ul{
+        position: fixed;
+        left: -20px;
+        background-color: black;
+        height: 450px;
+        width: 100%;
+
+        transition: 0.5s ease-in-out;
+    }
+    #click:checked ~ .toggle i:before{
+        content: "\f00d";
+    }
+}
